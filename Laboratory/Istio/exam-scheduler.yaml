@@ -20,8 +20,7 @@ spec:
       serviceAccountName: exam-scheduler-sa
       containers:
         - name: exam-scheduler
-          image: hashicorp/http-echo
-          args: ["-listen=:8080", "-text=📅 Exam scheduler"]
+          image: servicemeshncs/exam-scheduler:latest
           ports:
             - containerPort: 8080
 ---
