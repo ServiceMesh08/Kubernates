@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: professor-tools-sa
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: professor-tools
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: professor-tools
+  template:
+    metadata:
+      labels:
+        app: professor-tools
+    spec:
+      serviceAccountName: professor-tools-sa
+      containers:
+      - name: professor-tools
+        image: curlimages/curl
+        command: [ "sleep", "3600" ]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: professor-tools
+spec:
+  selector:
+    app: professor-tools
+  ports:
+  - port: 80
+    targetPort: 8080
