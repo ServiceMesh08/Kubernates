@@ -69,5 +69,3 @@ By the end of this lab, you will be able to:
 ---
 
 💡 *Before starting, make sure that Istio is properly installed and the namespace is labeled with `istio-injection=enabled`.*
-
-Enjoy exploring secure microservice communication with Istio!
