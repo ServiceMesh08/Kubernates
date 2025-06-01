@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aura-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aura-api
+  template:
+    metadata:
+      labels:
+        app: aura-api
+      # <- the Linkerd injector watches labels only
+    spec:
+      containers:
+      - name: aura-api
+        image: servicemeshncs/aura-api:latest
+        ports:
+        - containerPort: 8080
+        env:                       # tune behaviour on-the-fly
+        - name: ERROR_RATE         # 0.0–1.0 = 0–100 % 500 errors
+          value:  "0.2"
+        - name: MIN_DELAY_S        # random latency 0.2–3 s
+          value:  "0.2"
+        - name: MAX_DELAY_S
+          value:  "3.0"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aura-api
+spec:
+  selector:
+    app: aura-api
+  ports:
+  - port: 80
+    targetPort: 8080
