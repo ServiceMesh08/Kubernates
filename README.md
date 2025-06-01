@@ -1,15 +1,15 @@
 # Kubernetes & Service Mesh
 
 Welcome to the **Kubernetes & Service Mesh** lab repository!  
-This project provides hands-on experience with Kubernetes (v1.22.4) and modern Service Mesh technologies such as **Istio** and **Linkerd**.
+This project provides hands-on experience with Kubernetes (v1.22.4) and two leading service mesh technologies: **Istio** and **Linkerd**.
 
-Through guided exercises and automated scripts, you’ll explore core Kubernetes concepts and apply advanced networking and security features—without changing a single line of application code.
+Through practical scenarios and live simulations, you'll learn how to deploy and secure containerized applications using service meshes—**without touching the application code**. The lab is ideal for students, professionals, or educators who want to explore zero-trust networking, observability, and resiliency patterns.
 
 ---
 
 ## 📁 Repository Structure
 
-The repository is organized into the following directories:
+The repository is structured into the following directories:
 
 ### 🔬 `Laboratory/`
 
@@ -26,25 +26,40 @@ Each subfolder includes a dedicated `README.md` to guide you through the specifi
 
 This folder contains **automated setups** for quick execution during live demos or classroom presentations.
 
-- `Istio/`: Shell scripts and YAML files to quickly deploy the Istio-based lab environment, including all required microservices and policies. Dockerfiles and Python app source code are included.
-- `Linkerd/`: Ready-to-run scripts and manifests for deploying the Linkerd version of the lab, featuring retry budgets, failure accrual, and automatic mTLS.
-- `ClusterSetup/`: Scripts and instructions to bootstrap a Kubernetes cluster from scratch using `kubeadm`, install Cilium as the CNI plugin, and prepare the environment for Service Mesh deployment.
+- `Istio/`: 
+  - `IstioSetup.sh`: a script to instantly deploy the Istio-based lab.
+  - `YamlCreation.yaml`: a complete setup with PeerAuthentication and AuthorizationPolicies.
+  - `Dockerfile` and `app.py`: Python microservice for mTLS and RBAC testing.
 
-These resources are ideal for instructors, presenters, or anyone who wants to skip straight to a running setup.
+- `Linkerd/`:  
+  - `LinkerdSetup.sh`: ready-to-run script for launching the Linkerd environment.
+  - `YamlCreation.yaml`: includes ServiceProfile, retry budgets, failure accrual settings.
+  - `Dockerfile` and `app.py`: app + client to simulate traffic and failure handling.
 
----
-
-## 🧠 What You Will Learn
-
-- How to set up a Kubernetes cluster and configure a CNI plugin (Cilium)
-- Kubernetes essentials: Pods, Deployments, Services, Namespaces
-- How Service Meshes enhance Kubernetes with zero-trust security and observability
-- Hands-on practice with Istio: mTLS, RBAC, and traffic authorization
-- Hands-on practice with Linkerd: retry budgets, circuit breaking, and metrics
-- How to debug and observe microservice traffic with real-time CLI tools
+Each folder enables a **quick-launch environment** with prebuilt configurations—perfect for exams, workshops, and demos.
 
 ---
 
-> This lab was created for educational purposes at the Politecnico di Torino (April 2025) and is now open for learning, exploration, and sharing 🚀
+## 🚀 Technologies Used
+
+- **Kubernetes** v1.22.4  
+- **Istio** v1.16.7  
+- **Linkerd** v2.13  
+- **CNI Plugin**: Cilium v0.16.24  
+- **Envoy** (Istio) & **Linkerd2-Proxy** (Linkerd)  
+- **Demo apps**: `curlimages/curl`, `busyboxplus`, `hashicorp/http-echo`
 
 ---
+
+## 🎯 Learning Objectives
+
+- Set up a Kubernetes cluster with a custom CNI (Cilium)
+- Master Kubernetes fundamentals: Pods, Deployments, Namespaces, Services
+- Understand how service meshes enhance Kubernetes with observability, security, and traffic control
+- Apply **Istio** features: mTLS, AuthorizationPolicies, sidecar injection
+- Use **Linkerd** features: retry budget, failure accrual, and automatic mTLS
+- Inspect real-time traffic using `kubectl`, `istioctl`, and `linkerd viz` commands
+
+---
+
+> This lab was created for educational purposes at **Politecnico di Torino** and is now open for learning and exploration.
