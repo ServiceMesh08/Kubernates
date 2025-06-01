@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: exam-scheduler-sa
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exam-scheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exam-scheduler
+  template:
+    metadata:
+      labels:
+        app: exam-scheduler
+    spec:
+      serviceAccountName: exam-scheduler-sa
+      containers:
+        - name: exam-scheduler
+          image: servicemeshncs/exam-scheduler:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: exam-scheduler
+spec:
+  selector:
+    app: exam-scheduler
+  ports:
+    - port: 80
+      targetPort: 8080

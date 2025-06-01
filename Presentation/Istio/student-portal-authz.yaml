@@ -1,0 +1,10 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: deny-student-inbound
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: student-portal
+  rules: []
