@@ -14,12 +14,12 @@ Each subfolder corresponds to one of the service mesh technologies used in the p
 
 Inside each of them, you'll find:
 
-| File Type            | Purpose |
-|----------------------|---------|
-| `.sh` scripts         | Automate resource deployment and setup commands |
-| `.yaml` manifests     | Kubernetes resources for services, deployments, policies, etc. |
-| `.py` files           | Lightweight Python apps used to simulate microservices |
-| `Dockerfile`          | Custom container images for the demo applications |
+| File Type         | Purpose                                                        |
+|-------------------|----------------------------------------------------------------|
+| `.sh` scripts     | Automate resource deployment and setup commands                |
+| `.yaml` manifests | Kubernetes resources for services, deployments, policies, etc. |
+| `.py` files       | Lightweight Python apps used to simulate microservices         |
+| `Dockerfile`      | Custom container images for the demo applications              |
 
 These assets reproduce the same scenarios described in the `Laboratory/` section, but with **faster setup** and fewer manual steps.
 
@@ -37,4 +37,3 @@ Use the `Presentation/` folder when:
 
 > For full details and explanations, refer to the `Laboratory/` section.  
 > This folder is meant to **accelerate execution**, not replace learning. 🚀
-
