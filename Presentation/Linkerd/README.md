@@ -25,11 +25,11 @@ You will deploy a simple microservice application and experiment with:
 
 This directory includes the YAML manifests used to deploy and test Linkerd features:
 
-| File Name            | Description |
-|----------------------|-------------|
-| `aura-api.yaml`      | Deploys a backend API with controllable delay and error rate |
-| `web-frontend.yaml`  | Deploys a frontend that interacts with the API using curl |
-| `aura-profile.yaml`  | Defines a **ServiceProfile** to enable retries and monitor specific routes |
+| File Name           | Description                                                             |
+|---------------------|-------------------------------------------------------------------------|
+| `aura-api.yaml`     | Deploys a backend API with controllable delay and error rate            |
+| `web-frontend.yaml` | Deploys a frontend that interacts with the API using curl               |
+| `aura-profile.yaml` | Defines a **ServiceProfile** to enable retries and monitor specific routes |
 
 ---
 
@@ -39,20 +39,20 @@ The microservice application simulates a **stress-test environment** where the b
 
 You will explore how Linkerd handles:
 
-- Retryable routes vs non-retryable ones
-- Retry budget exhaustion
-- Circuit breaking when a pod continuously fails
-- Encrypted communication by default via mTLS
+- Retryable routes vs non-retryable ones  
+- Retry budget exhaustion  
+- Circuit breaking when a pod continuously fails  
+- Encrypted communication by default via mTLS  
 
 ---
 
 ## 🔐 Allowed vs Denied Traffic (via Retry & Circuit Breaker)
 
-| **Route**         | **Condition**            | **Retryable** | **Response**          | **Behavior**                            |
-|-------------------|--------------------------|---------------|------------------------|-----------------------------------------|
-| `/aura`           | 40% random 500 errors     | ✅ Yes        | 200 OK (after retry)   | Retries until budget is exhausted       |
-| `/slow`           | Always 200, 2–4s latency  | ✅ Yes        | 200 OK                 | No retry (no 5xx), budget remains full  |
-| `/chaos`          | Always 500 errors         | ❌ No         | 500 Internal Error     | Immediately fails (no retry)            |
+| **Route** | **Condition**            | **Retryable** | **Response**         | **Behavior**                          |
+|-----------|--------------------------|---------------|-----------------------|---------------------------------------|
+| `/aura`   | 40% random 500 errors     | ✅ Yes        | 200 OK (after retry)  | Retries until budget is exhausted     |
+| `/slow`   | Always 200, 2–4s latency  | ✅ Yes        | 200 OK                | No retry (no 5xx), budget remains full|
+| `/chaos`  | Always 500 errors         | ❌ No         | 500 Internal Error    | Immediately fails (no retry)          |
 
 Once **failure accrual** is enabled, Linkerd will detect pods that always fail and **eject them from the load-balancer pool** using exponential backoff to gradually reintroduce them.
 
