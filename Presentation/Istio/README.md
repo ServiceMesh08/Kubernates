@@ -19,19 +19,11 @@ You will use prebuilt files and scripts to instantly create a working microservi
 | File Name           | Description                                                              |
 |---------------------|--------------------------------------------------------------------------|
 | `IstioSetup.sh`     | Automates the deployment of all required services and policies           |
-| `YamlCreation.yaml` | Contains service definitions and policies (peer auth, authorization)     |
+| `YamlCreation.sh` | Contains service definitions and policies (peer auth, authorization)     |
 | `Dockerfile`        | Container definition for the app used in this demo                       |
 | `app.py`            | Python microservice that simulates traffic and service behavior          |
 | `README.md`         | This documentation file                                                  |
 
 ---
 
-## 🚀 How to Use
-
-1. Launch the quick setup script:
-
-   ```bash
-    chmod +x IstioSetup.sh  
-    ./IstioSetup.sh
-2. As soon as you run this script the Cilium ConfigMap will open. Inside this file, set to true the line: cni-exclusive: "false" and add this line if not present:  bpf-lb-sock-hostns-only: "true"
 
