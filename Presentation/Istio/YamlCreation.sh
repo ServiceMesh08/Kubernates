@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "📄 Creating exam-scheduler-authz.yaml..."
-cat <<EOF > exam-scheduler-authz.yaml
+echo "📄 Creating authz-scheduler.yaml..."
+cat <<EOF > authz-scheduler.yaml
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
@@ -78,8 +78,8 @@ spec:
     mode: STRICT
 EOF
 
-echo "📄 Creating professor-tools-authz.yaml..."
-cat <<EOF > professor-tools-authz.yaml
+echo "📄 Creating authz-professor.yaml..."
+cat <<EOF > authz-professor.yaml
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
@@ -131,8 +131,8 @@ spec:
     targetPort: 8080
 EOF
 
-echo "📄 Creating student-portal-authz.yaml..."
-cat <<EOF > student-portal-authz.yaml
+echo "📄 Creating authz-student.yaml..."
+cat <<EOF > authz-student.yaml
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
