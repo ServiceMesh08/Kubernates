@@ -12,7 +12,7 @@ aura_descriptions = [
 ]
 
 # ─── Parametri regolabili via env (comodi per il laboratorio) ──────────
-ERROR_RATE   = float(os.getenv("ERROR_RATE",   "0.2"))   # 0–1  -> 20 %
+ERROR_RATE   = float(os.getenv("ERROR_RATE",   "0.4"))   # 0–1  -> 40 %
 MIN_DELAY_S  = float(os.getenv("MIN_DELAY_S",  "0.2"))   # 200 ms
 MAX_DELAY_S  = float(os.getenv("MAX_DELAY_S",  "3.0"))   #   3 s
 
