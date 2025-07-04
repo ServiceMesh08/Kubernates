@@ -18,7 +18,8 @@ echo "🚀 4) Installing control plane with proxyInit as root..."
 linkerd install --set proxyInit.runAsRoot=true | kubectl apply -f -
 
 echo "⏳ 5) Waiting for control plane to become Ready..."
-linkerd check --wait
+
+linkerd check 
 
 
 echo "🌐 6) Installing Viz extension..."
