@@ -17,7 +17,6 @@ Inside each of them, you'll find:
 | File Type         | Purpose                                                        |
 |-------------------|----------------------------------------------------------------|
 | `.sh` scripts     | Automate resource deployment and setup commands                |
-| `.yaml` manifests | Kubernetes resources for services, deployments, policies, etc. |
 | `.py` files       | Lightweight Python apps used to simulate microservices         |
 | `Dockerfile`      | Custom container images for the demo applications              |
 
