@@ -191,3 +191,9 @@ kubectl apply -f professor-tools.yaml
 kubectl apply -f student-portal.yaml
 
 echo "✅ Application YAML files applied successfully."
+
+chmod +x ApplyPolicies.sh
+chmod +x AttackMtls.sh
+chmod +x GetExamFromProfessor.sh
+chmod +x GetExamsFromStudent.sh
+chmod +x PostExam.sh
