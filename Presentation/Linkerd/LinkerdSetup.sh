@@ -17,14 +17,9 @@ linkerd install --crds | kubectl apply -f -
 echo "🚀 4) Installing control plane with proxyInit as root..."
 linkerd install --set proxyInit.runAsRoot=true | kubectl apply -f -
 
-echo "⏳ 5) Waiting for control plane to become Ready..."
-
-linkerd check 
-
-
 echo "🌐 6) Installing Viz extension..."
 linkerd viz install | kubectl apply -f -
 
-echo "⏳ 7) Waiting for Viz components to become Ready..."
-linkerd viz check --wait
+echo "⏳ RUN THE COMMAND TO CHECK LINKERD AND VIZ"
+
 
