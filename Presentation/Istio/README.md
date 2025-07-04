@@ -28,14 +28,10 @@ You will use prebuilt files and scripts to instantly create a working microservi
 
 ## 🚀 How to Use
 
-1. Make sure **Istio is installed** and the namespace has `istio-injection=enabled`.  
-   You can enable sidecar injection with:
-
-   ```bash
-   kubectl label namespace default istio-injection=enabled
-2. Then launch the quick setup script:
+1. Then launch the quick setup script:
 
    ```bash
     chmod +x IstioSetup.sh  
     ./IstioSetup.sh
+2. As soon as you run this script the Cilium ConfigMap will open. Inside this file, set to true the line: cni-exclusive: "false" and add this line if not present:  bpf-lb-sock-hostns-only: "true"
 
