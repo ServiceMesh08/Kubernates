@@ -36,7 +36,7 @@ This folder contains **automated setups** for quick execution during live demos 
   - `YamlCreation.yaml`: includes ServiceProfile, retry budgets, failure accrual settings.
   - `Dockerfile` and `app.py`: app + client to simulate traffic and failure handling.
 
-Each folder enables a **quick-launch environment** with prebuilt configurations—perfect for exams, workshops, and demos.
+Each folder enables a **quick-launch environment** with prebuilt configurations, perfect for demos.
 
 ---
 
