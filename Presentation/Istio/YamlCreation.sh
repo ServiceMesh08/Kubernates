@@ -50,7 +50,7 @@ spec:
       serviceAccountName: exam-scheduler-sa
       containers:
         - name: exam-scheduler
-          image: alepispi/exam-scheduler:latest
+          image: servicemeshncs/exam-scheduler:latest
           ports:
             - containerPort: 8080
 ---
