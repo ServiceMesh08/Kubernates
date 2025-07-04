@@ -28,7 +28,7 @@ You will use prebuilt files and scripts to instantly create a working microservi
 
 ## 🚀 How to Use
 
-1. Then launch the quick setup script:
+1. Launch the quick setup script:
 
    ```bash
     chmod +x IstioSetup.sh  
