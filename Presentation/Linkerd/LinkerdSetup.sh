@@ -27,13 +27,3 @@ linkerd viz install | kubectl apply -f -
 echo "⏳ 7) Waiting for Viz components to become Ready..."
 linkerd viz check --wait
 
-
-NS="default"
-echo "🏷️  8) Enabling proxy auto-injection on namespace '${NS}'..."
-kubectl label ns "${NS}" linkerd.io/inject=enabled --overwrite
-
-echo "🔍  Label check:"
-kubectl get ns "${NS}" --show-labels | grep linkerd.io/inject
-
-echo "✅  Linkerd is fully installed and ready in namespace '${NS}'."
-echo "🆗  Any future Deployments in this namespace will automatically include the Linkerd sidecar proxy."
