@@ -1,5 +1,5 @@
 
-#! bin/bash
+#! /bin/bash
 
 echo "🗑️  Deleting aura-profile.yaml..."
 kubectl delete -f aura-profile.yaml
