@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 chmod +x SetErrorAura0.9.sh
 chmod +x LinkerdSetup.sh
