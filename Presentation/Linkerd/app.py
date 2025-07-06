@@ -20,7 +20,7 @@ MAX_DELAY_S  = float(os.getenv("MAX_DELAY_S",  "3.0"))   #   3 s
 def aura():
     name = request.args.get("name", "mystery being")
 
-    # 1) ERRORE 5xx (≈20 %): fallimento immediato ⇒ Linkerd può ritentare
+    # 1) ERRORE 5xx (≈40 %): fallimento immediato ⇒ Linkerd può ritentare
     if random.random() < ERROR_RATE:
         return Response(
             json.dumps({"error": "internal server error – simulated"}),
