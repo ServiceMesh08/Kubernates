@@ -5,9 +5,9 @@ This folder contains the main materials for the **Service Mesh Project (2025)**.
 ## 📄 ServiceMesh.pptx
 A presentation summarizing the project goals, architecture choices, and experimental results.  
 It covers:
-- Theoretical foundations of Service Mesh
-- Comparison between Istio and Linkerd
-- Practical insights from our Kubernetes-based laboratory
+- Project goals
+- Steps to achieve them
+- Results and Achievements
 
 ## 📄 LabServiceMesh.pdf
 A detailed documentation of the laboratory activities, including:
